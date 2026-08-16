@@ -1,6 +1,24 @@
 # inferctl
 
-CLI-first sentiment scorer that grows into a full MLOps stack: package → API → train → track → version → deploy → schedule → monitor.
+## Project description
+
+`inferctl` is a **CLI-first sentiment scorer** that grows into a full MLOps stack: package → API → train → track → version → deploy → schedule → monitor.
+
+You start with a single command that scores text, then week by week add a Flask API and SDK, real Hugging Face train/eval, MLflow tracking and registry, DVC pipelines, Docker Compose deploy, tests and CI, orchestration, and finally monitoring plus rollback.
+
+This README is the **8-week, Monday–Friday map**. Each weekday is about **2.5 hours** (~12.5 h/week). **Friday is the exam**: if the gate fails, do not start the next week. The spine is always `inferctl` — learn a slice, then put it in the tool the same day.
+
+## How to use
+
+Install in editable mode, then call the CLI:
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -e .
+inferctl --help
+```
+
+Core commands (built across the 8 weeks):
 
 ```text
 inferctl predict   --text "..." [--url|--model-id|--model-dir]
@@ -14,9 +32,13 @@ inferctl rollback  --stage Production --version N
 inferctl status
 ```
 
-This README is the **8-week, Monday–Friday map**. Each weekday is about **2.5 hours** (~12.5 h/week). **Friday is the exam**: if the gate fails, do not start the next week.
+Quick start once Week 1 is done:
 
-The spine is always `inferctl`. Learn a slice, then put it in the tool the same day.
+```bash
+inferctl predict --text "this is great"
+```
+
+Work the roadmap top to bottom. Each week ends with a **Friday exam** — run those commands cold in a fresh terminal. If the gate fails, redo that week; do not skip ahead. Log results in `notes/week-N.md`.
 
 ---
 
